@@ -17,22 +17,22 @@ if os.path.exists(libdir):
 
 import logging
 
-from waveshare_epd import epd2in7
+from waveshare_epd import epd7in5_V2
 import time
 from PIL import Image,ImageDraw,ImageFont
 import traceback
 
 # Initialize the screen
-epd = epd2in7.EPD()
+epd = epd7in5_V2.EPD()
 epd.init()
-epd.Init_4Gray()
+#epd.Init_4Gray()
 
 # Open the provided image
-print imgpath
+print(imgpath)
 image = Image.open(imgpath)
 
 # Print it to the display
-epd.display_4Gray(epd.getbuffer_4Gray(image))
+epd.display(epd.getbuffer(image))
 
 # Power down display
 epd.sleep()

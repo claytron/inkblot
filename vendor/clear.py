@@ -15,13 +15,13 @@ if os.path.exists(libdir):
 
 import logging
 
-from waveshare_epd import epd2in7
+from waveshare_epd import epd7in5_V2
 import time
 from PIL import Image,ImageDraw,ImageFont
 import traceback
 
 # Initialize the screen
-epd = epd2in7.EPD()
+epd = epd7in5_V2.EPD()
 epd.init()
 
 # Clear it
